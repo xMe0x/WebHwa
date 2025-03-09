@@ -1,1 +1,89 @@
 <app-navbar></app-navbar>
+   <div class="container mx-auto pt-20  ">
+      <form [formGroup]="formstyle" class="pt-5">
+      <div class="flex justify-center flex-wrap">
+      <label class="font-bold text-xl ">สไตล์</label> <!-- สไตล์มังงะ -->
+         <div class="container w-300 ml-10">
+         <button class="btn btn-ghost  m-5 " type="button" id="style-all"  (click)="setvaluestyle('ทั้งหมด')">ทั้งหมด</button>
+         <button class="btn btn-ghost    m-5 " type="button" id="adventure" (click)="setvaluestyle('ผจญภัย')" >ผจญภัย</button>
+         <button class="btn btn-ghost  n m-5 " type="button" id="action" (click)="setvaluestyle('แอ็กชั่น')">แอ็กชั่น</button>
+         <button class="btn btn-ghost   m-5 " type="button" id="fantasy" (click)="setvaluestyle('แฟนตาซี')">แฟนตาซี</button>
+         <button class="btn btn-ghost    m-5 " type="button" id="sifi" (click)="setvaluestyle('ไซไฟ')">ไซไฟ</button>
+         <button class="btn btn-ghost   m-5 " type="button" id="school-life" (click)="setvaluestyle('ชีวิตในโรงเรียน')">ชีวิตในโรงเรียน</button>
+         <button class="btn btn-ghost   m-5 " type="button" id="romance"  (click)="setvaluestyle('โรแมนซ์')">โรแมนซ์</button>
+         <button class="btn btn-ghost   m-5 " type="button" id="drama" (click)="setvaluestyle('ดราม่า')">ดราม่า</button>
+         <button class="btn btn-ghost   m-5 " type="button" id="comedy" (click)="setvaluestyle('คอมเมดี้')">คอมเมดี้</button>
+         <button class="btn btn-ghost   m-5 " type="button" id="horror" (click)="setvaluestyle('สยองขวัญ/ระทึกขวัญ')">สยองขวัญ/ระทึกขวัญ</button>
+         <button class="btn btn-ghost   m-5 " type="button" id="investigate" (click)="setvaluestyle('สืบสวนสอบสวน')">สืบสวนสอบสวน</button>
+         <button class="btn btn-ghost   m-5 " type="button" id="sport" (click)="setvaluestyle('กีฬา')">กีฬา</button>
+         <button class="btn btn-ghost   m-5 " type="button" id="harem" (click)="setvaluestyle('ฮาเร็ม')">ฮาเร็ม</button>
+         <button class="btn btn-ghost   m-5 " type="button" id="food" (click)="setvaluestyle('อาหาร/การทำอาหาร')">อาหาร/การทำอาหาร</button>
+         <button class="btn btn-ghost   m-5 " type="button" id="daily-life" (click)="setvaluestyle('ชีวิตประจำวัน')">ชีวิตประจำวัน</button>
+         <button class="btn btn-ghost   m-5 " type="button" id="supernaturl" (click)="setvaluestyle('เหนือธรรมชาติ')">เหนือธรรมชาติ</button>
+      </div>
+  
+      </div>
+      <div class="flex justify-center mt-15 flex-wrap"><!-- สถานะจบหรือยังไม่จบของมังงะ -->
+      <label class="font-bold text-xl ">สถานะ</label>
+         <div class="container w-300 ml-10">
+         <button class=" btn btn-ghost  m-5 " type="button" id="status-all"  (click)="setvaluestatus('ทั้งหมด')">ทั้งหมด</button>
+         <button class="btn btn-ghost   m-5 " type="button" id="ready" (click)="setvaluestatus('ยังไม่จบ')">ยังไม่จบ</button>
+         <button class="btn btn-ghost   m-5 " type="button" id="finish"  (click)="setvaluestatus('จบบริบูรณ์')">จบบริบูรณ์</button>
+      </div>
+   </div>
+      <div class="flex justify-center mt-15 flex-wrap">
+      <label class="font-bold text-xl ">ปีที่ออก</label><!-- ปีที่ออกของมังงะ -->
+         <div class="container w-300 ml-10">
+         <button class="btn btn-ghost   m-5 " type="button" id="year-all"  (click)="setvalueyearissue('ทั้งหมด')">ทั้งหมด</button>
+         <button class="btn btn-ghost   m-5 " type="button" id="2024"  (click)="setvalueyearissue('2024')">2024</button>
+         <button class="btn btn-ghost   m-5 " type="button" id="2023"  (click)="setvalueyearissue('2023')">2023</button>
+         <button class="btn btn-ghost   m-5 " type="button" id="2022"  (click)="setvalueyearissue('2022')">2022</button>
+         <button class="btn btn-ghost   m-5 " type="button" id="2021"  (click)="setvalueyearissue('2021')">2021</button>
+         <button class="btn btn-ghost   m-5 " type="button" id="2020"  (click)="setvalueyearissue('2020')">2020</button>
+         <button class="btn btn-ghost   m-5 " type="button" id="2019"  (click)="setvalueyearissue('2019')">2019</button>
+         <button class="btn btn-ghost   m-5 " type="button" id="2018"  (click)="setvalueyearissue('2018')">2018</button>
+         <button class="btn btn-ghost   m-5 " type="button" id="2017"  (click)="setvalueyearissue('2017')">2017</button>
+         <button class="btn btn-ghost   m-5 " type="button" id="2016"  (click)="setvalueyearissue('2016')">2016</button>
+        
+      </div>
+   </div>
+   
+      <div class="flex justify-center mt-15 flex-wrap">
+      <label class="font-bold text-xl ">จัดเรียง</label><!-- จัดเรียงโดยอะไร -->
+         <div class="container w-300 ml-10">
+         <button class="btn btn-ghost   m-5 " type="button" id="new"  (click)="setsort('ล่าสุด')">ล่าสุด</button>
+         <button class="btn btn-ghost   m-5 " type="button" id="poppular"  (click)="setsort('ติดตามมากที่สุด')">ติดตามมากที่สุด</button>
+      </div>
+   </div>
+   </form>
+      <div class="flex mt-15 flex-wrap"><!-- ผลของการเลือก -->
+      <label class="font-bold text-xl ">เลือก :</label>
+      <div class="container w-300 ml-10">
+         <button class="btn btn-info hidden mr-5" id="show"  [class.hidden]="isHidden()">{{ formstyle.get('stylemanhwa')?.value }}</button>
+         <button class="btn btn-info hidden mr-5" id="show"  [class.hidden]="isHiddenstatus()">{{ formstyle.get('status')?.value }}</button>
+         <button class="btn btn-info hidden mr-5" id="show"  [class.hidden]="isHiddenyear()">{{ formstyle.get('yearissue')?.value }}</button>
+         <button class="btn btn-info hidden mr-5" id="show"  [class.hidden]="isHiddensoryby()">{{ formstyle.get('sortby')?.value }}</button>
+        
+         <div class="flex justify-center mt-25">
+            <div class="w-full max-w-7xl pl-4">
+                <div class="flex flex-wrap justify-start gap-5">
+                    <div class="flex flex-col items-center w-36 md:w-40 lg:w-48 xl:w-56">
+                     <div *ngFor="let item of filteredData">
+                        <h3>{{ item.name }}</h3>
+                        <p>แนว: {{ item.style }}</p>
+                        <p>สถานะ: {{ item.status }}</p>
+                        <p>ปีที่ออก: {{ item.year }}</p>
+                        <img [src]="item.photo" alt="">
+                      </div>
+                      
+                  
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      
+       
+   </div>
+   
+</div>
