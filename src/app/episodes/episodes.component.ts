@@ -3,11 +3,11 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { FooterComponent } from '../footer/footer.component';
 
 @Component({
-  selector: 'app-reading-page',
+  selector: 'app-episodes',
   imports: [NavbarComponent,FooterComponent],
-  templateUrl: './reading-page.component.html',
-  styleUrl: './reading-page.component.css'
+  templateUrl: './episodes.component.html',
+  styleUrl: './episodes.component.css'
 })
-export class ReadingPageComponent {
+export class EpisodesComponent {
 
 }
