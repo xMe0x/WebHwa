@@ -1,1 +1,72 @@
-<p>reading-page works!</p>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>WebHwa - Reading Page</title>
+  <!-- Tailwind CSS CDN (ตัวอย่าง) -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.2.7/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <app-navbar></app-navbar>
+  <!-- ส่วนหัว (Header) -->
+  <header class="flex items-center justify-between bg-white p-3 border-b shadow">
+    <!-- ปุ่มย้อนกลับ -->
+    <button class="text-gray-600 hover:text-gray-900 focus:outline-none">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" 
+           viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" 
+              d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+
+    <!-- ชื่อเว็บ/โลโก้ -->
+    <h1 class="text-lg font-bold text-gray-700">WebHwa</h1>
+    
+    <!-- ที่ว่าง (เผื่อใส่ไอคอนอื่น หรือปุ่มเมนู) -->
+    <div class="w-6 h-6"></div>
+  </header>
+
+  <!-- ส่วนเนื้อหา (Reading Content) -->
+  <main class="max-w-2xl mx-auto p-4 space-y-4">
+    <!-- รูปภาพแต่ละตอน -->
+    <img src="/favicon.ico" alt="ตอนที่ 1" class="w-full h-auto rounded-lg shadow">
+    <img src="/favicon.ico" alt="ตอนที่ 2" class="w-full h-auto rounded-lg shadow">
+    <img src="/favicon.ico" alt="ตอนที่ 3" class="w-full h-auto rounded-lg shadow">
+  </main>
+
+  <!-- ปุ่มก่อนหน้า / ถัดไป -->
+  <nav class="max-w-2xl mx-auto flex justify-between p-4">
+    <button class="bg-red-500 hover:bg-red-600 text-gray-700 px-4 py-2 rounded shadow">
+      ก่อนหน้า
+    </button>
+    <button class="bg-green-500 hover:bg-green-600 text-gray-700 px-4 py-2 rounded shadow">
+      ถัดไป
+    </button>
+  </nav>
+
+<!-- ส่วนคอมเมนต์ -->
+<section class="max-w-2xl mx-auto p-4 space-y-4">
+    <!-- กล่องพิมพ์คอมเมนต์ -->
+    <div class="flex">
+      <input type="text" placeholder="พิมพ์คอมเมนต์..." 
+             class="flex-1 border border-r-0 p-2 rounded-l focus:outline-none focus:ring-1 focus:ring-green-400">
+      <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-r shadow">
+        ส่ง
+      </button>
+    </div>
+
+    <!-- ตัวอย่างรายการคอมเมนต์ -->
+    <div class="bg-gray-100 rounded p-3 shadow">
+      <p class="text-sm text-gray-700">คอมเมนต์ที่ 1</p>
+    </div>
+    <div class="bg-gray-100 rounded p-3 shadow">
+      <p class="text-sm text-gray-700">คอมเมนต์ที่ 2</p>
+    </div>
+    <div class="bg-gray-100 rounded p-3 shadow">
+      <p class="text-sm text-gray-700">คอมเมนต์ที่ 3</p>
+    </div>
+  </section>
+
+ <app-footer></app-footer>
+</body>
+</html>
