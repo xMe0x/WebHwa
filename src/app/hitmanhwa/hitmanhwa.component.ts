@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-hitmanhwa',
-  imports: [],
+  imports: [NavbarComponent],
   templateUrl: './hitmanhwa.component.html',
   styleUrl: './hitmanhwa.component.css'
 })
