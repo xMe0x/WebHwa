@@ -1,2 +1,51 @@
 <app-navbar></app-navbar>
-<p>hitmanhwa works!</p>
+<!-- ลิสต์รายการหัวข้อเรื่องยอดฮิต -->
+<div class="list">
+<div class="navbar bg-base-100 shadow-sm mt-5 ">
+    <div class="navbar-start">
+      <a class="btn btn-ghost text-xl hidden">daisyUI</a>
+    </div>
+    <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal ">
+            <li><a href="#" class="text-xl mr-20 font-bold">ใหม่</a></li>
+            <li><a href="#" class="text-xl mr-20  font-bold">จันทร์</a></li>
+            <li><a href="#" class="text-xl mr-20  font-bold">อังคาร</a></li>
+            <li><a href="#" class="text-xl mr-20  font-bold">พุธ</a></li>
+            <li><a href="#" class="text-xl mr-20  font-bold">พฤหัส</a></li>
+            <li><a href="#" class="text-xl mr-20  font-bold">ศูกร์</a></li>
+            <li><a href="#" class="text-xl mr-20  font-bold">เสาร์</a></li>
+            <li><a href="#" class="text-xl mr-20  font-bold">อาทิตย์</a></li>
+          </ul>
+    </div>
+    <div class="navbar-end"></div>
+  </div>
+</div>
+
+<div class="container mx-auto pt-20">
+    <label class="col-span-3 text-2xl ml-15 ">เรื่องใหม่ยอดฮิต</label>
+
+        <div class="grid gap-4 grid-cols-5 h-screen grid-flow-col mt-10 ">
+            
+            <div class="col-span-2  bg-amber-700">
+
+            </div>
+            <div class="col-span-3  bg-amber-200">
+                <div class="text-center" *ngFor="let item of alldata">
+                    <div class="grid grid-cols-3 gap-4">
+                    <div class="col-span1 bg-amber-50">
+                    <img [src]="item.photo" class="h-50" alt="">
+                </div>
+                <div class="col-span-2 bg-amber-900 ">
+                    <h1 class=" font-bold text-xl mt-5">{{ item.name }}</h1>
+                    <p class="font-bold mt-2">แนว: {{ item.style }}</p>
+                    <p class="font-bold mt-2">สถานะ: {{ item.status }}</p>
+                    <p class="font-bold mt-2 mb-3">ปีที่ออก: {{ item.year }}</p>
+                 </div>
+                </div>
+            </div>
+            </div>
+
+
+        </div>
+
+</div>

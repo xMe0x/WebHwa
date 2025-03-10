@@ -6,10 +6,11 @@ import { CatagoryComponent } from "./catagory/catagory.component";
 import { EpisodesComponent } from './episodes/episodes.component';
 import { FooterComponent } from './footer/footer.component';
 import { ReadingPageComponent } from './reading_page/reading-page.component';
+import { HitmanhwaComponent } from "./hitmanhwa/hitmanhwa.component";
 
 @Component({
   selector: 'app-root',
-  imports: [ReadingPageComponent],
+  imports: [HitmanhwaComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
