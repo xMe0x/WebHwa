@@ -1,4 +1,4 @@
-<div class="navbar bg-base-100 shadow-sm p-10">
+<div class="navbar bg-navbar shadow-sm p-10 font-Kanit">
     <div class="navbar-start">
       <div class="dropdown">
         <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -6,7 +6,7 @@
         </div>
         <ul
           tabindex="0"
-          class="menu menu-sm dropdown-content bg-amber-50 rounded-box z-1 mt-3 w-52 p-2 shadow"><ul class="bg-amber-50"></ul>
+          class="menu menu-sm dropdown-content bg-amber-50 rounded-box z-1 mt-3 w-52 p-2 shadow">
           <li><a>หมวดหมู่</a></li>
           <li><a>เรื่องยอดฮิต</a></li>
           <li><a>รายการโปรด</a></li>
@@ -18,22 +18,31 @@
           </li>
         </ul>
       </div>
-      <a class="btn btn-ghost text-4xl">Webhwa</a>
+      <a class="btn btn-ghost text-5xl">Webhwa</a>
     </div>
     <div class="navbar-center hidden lg:flex">
-      <ul class="menu menu-horizontal px-1 absolute right-0 ">
-        <li><a href="#" class="mr-5 text-xl">หมวดหมู่</a></li>
-        <li><a href="#" class="mr-5 text-xl">เรื่องยอดฮิต</a></li>
-        <li><a href="#" class="mr-5 text-xl">รายการโปรด</a></li>
+      <ul class="menu menu-horizontal px-1 font-bold absolute right-0 ">
+        <li><a href="#" class="mr-5 text-xl "
+          [class.border-b-4]="activeMenu === 'homepage'"
+          >หน้าแรก</a></li>
+        <li><a routerLink="catagory" href="#" class="mr-5 text-xl" 
+          [class.border-b-4]="activeMenu === 'catagory'"
+          
+          
+          >หมวดหมู่</a></li>
+        <li><a routerLink="hitmanhwa" href="#" class="mr-5 text-xl"
+          [class.border-b-4]="activeMenu === 'hitmanhwa'"
+        
+          >เรื่องยอดฮิต</a></li>
         <li>
         <label class="input bg-gray-100 ">
             <svg class="h-[1em] opacity-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></g></svg>
-            <input class="w-2xl font-bold" type="search" required placeholder="Search"  disabled/>
+            <input class="w-2xl font-bold" type="search" required placeholder="Search"  />
           </label>
         </li>
       </ul>
     </div>
     <div class="navbar-end">
-      <a class="btn btn-success">เข้าสู่ระบบ</a>
+      <a class="btn btn-success" href="#">เข้าสู่ระบบ</a>
     </div>
   </div>

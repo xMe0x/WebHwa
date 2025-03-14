@@ -10,7 +10,7 @@ import { HitmanhwaComponent } from "./hitmanhwa/hitmanhwa.component";
 
 @Component({
   selector: 'app-root',
-  imports: [HitmanhwaComponent],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
