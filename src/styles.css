@@ -5,8 +5,11 @@
 .font-Kanit {
     font-family: 'Kanit', 'Lato', 'Mitr', 'Roboto', sans-serif;
   }
+.font-yeon{
+  font-family: "Yeon Sung", system-ui;
+}
   .bg-navbar{
-    background-color: #E0F2F1;
+    background-color: rgb(247, 246, 253);
   }
   .bg-footer{
     background-color: black   ;

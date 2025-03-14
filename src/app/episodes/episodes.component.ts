@@ -1,13 +1,16 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { NavbarComponent } from '../navbar/navbar.component';
-import { FooterComponent } from '../footer/footer.component';
+import { RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-episodes',
-  imports: [NavbarComponent,FooterComponent],
+  imports: [RouterLink,CommonModule],
   templateUrl: './episodes.component.html',
   styleUrl: './episodes.component.css'
 })
 export class EpisodesComponent {
-
+  getRange(cout:number){
+    return Array.from({ length: cout }, (_, i) => i);
+  }
 }

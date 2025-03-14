@@ -1,21 +1,22 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { NavbarComponent } from "../navbar/navbar.component";
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { data } from '../data';
 import { CommonModule } from '@angular/common';
 import { dataservice } from '../data.service';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-catagory',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FormsModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule,RouterLink],
   templateUrl: './catagory.component.html',
   styleUrls: ['./catagory.component.css']
 })
 
 
-export class CatagoryComponent {
+export class CatagoryComponent implements OnDestroy,OnInit  {
   @ViewChild('selectedStatus', { static: false }) selectedStatus!: ElementRef;
   @Input() data!: data;
   style = "";
@@ -127,5 +128,16 @@ export class CatagoryComponent {
         this.selectedStatus.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }, 200);
     }
+  }
+
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // เลื่อนไปตำแหน่งบนสุด
+  }
+  ngOnInit(): void { /* เริ่มหน้า */
+    this.scrollToTop(); 
+  }
+  ngOnDestroy(): void {/* ออกหน้า */
+    
+    this.scrollToTop();
   }
 }
