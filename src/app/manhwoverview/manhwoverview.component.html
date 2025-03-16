@@ -1,17 +1,20 @@
 <img class="h-150 w-full object-scale-down" src="imagetoon\Chronicles-of-the-Demon-Faction.jpg" alt="">
-<h2 class="pl-4 pb-4 font-bold text-xl text-center">Chronicles of the Demon Faction ตำนานการเกิดใหม่ในลัทธิมาร</h2>
-<ul class="flex flex-row gap-3 pl-10 pb-4 opacity-50">
+<h2 class="pl-4 pb-4 font-bold text-4xl text-center font-Kanit">Chronicles of the Demon Faction</h2>
+<h2 class="pl-4 pb-4 font-semibold text-3xl text-center font-Kanit">ตำนานการเกิดใหม่ในลัทธิมาร</h2>
+
+<ul class="flex flex-row gap-3 pl-10 pb-4 opacity-50 font-Kanit">
     <li class="hover:underline active:underline">หมวดหมู่</li>
     <li class="hover:underline active:underline">จำนวนเข้าชม</li>
     <li class="hover:underline active:underline">ยอดกดไลด์</li>
     <li class="hover:underline active:underline">เรตติ้ง</li>
     <li class="hover:underline active:underline">วันที่ลง</li>
 </ul>
-<div class="border-b-2">
+
+<div class="border-b-1">
 </div>
-<ul class="flex flex-row gap-3 pl-10 pt-4 pb-4 ">
-  <button (click)=" showComponent('EpisodeComponent')">ตอนที่</button>
-  <button (click)=" showComponent('DetailComponent')">ข้อมูล</button>
+<ul class="flex flex-row gap-3 pl-10 pt-4 pb-4 font-semibold font-Kanit text-xl">
+  <button (click)=" showComponent('EpisodeComponent')" [class.border-b-2]="currentComponent ==='EpisodeComponent'">ตอนที่</button>
+  <button (click)=" showComponent('DetailComponent')" [class.border-b-2]="currentComponent ==='DetailComponent'">ข้อมูล</button>
 </ul>
 <app-episodes *ngIf="currentComponent ==='EpisodeComponent'"/>
 <app-detail *ngIf="currentComponent ==='DetailComponent'"/>
