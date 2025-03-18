@@ -1,27 +1,27 @@
+
 <!-- ปุ่ม -->
 <div class="flex justify-center ">
-    <button routerLink="/reading"
-        class="bg-black hover:opacity-25 text-white text-center font-bold font-Kanit py-2 px-4 rounded-sm border-black w-full max-w-9/10 mb-10 duration-200">
+    <button
+        class="bg-black hover:opacity-25 text-white text-center font-bold py-2 px-4 rounded-sm border-black w-full max-w-9/10">
         อ่านตอนแรก
     </button>
 </div>
 
 <!-- content -->
-<div class="flex flex-wrap justify-start gap-10 w-full max-w-7xl mx-auto ">
-    <div *ngFor="let item of getRange(6)">
-        <a routerLink='/reading' href="#" >
-            <div class="hover:scale-120 delay-100 duration-200">
-                <div class="flex flex-col w-36 md:w-40 lg:w-48 xl:w-56 ">
-                    <div class="relative group ">
-                        <img src="imagetoon\Chronicles-of-the-Demon-Faction.jpg" alt=""
-                            class="w-full object-scale-down rounded-lg ">
-                        <div
-                            class="absolute inset-0 bg-black opacity-0 group-hover:opacity-40 transition-opacity rounded-lg delay-100 duration-200">
-                        </div>
-                    </div>
-                    <p class="text-center mt-2 font-semibold font-Kanit">ตอนที่ {{item+1}}</p>
+<div class="flex justify-center mt-6">
+    <div class="w-screen max-w-7xl pl-4">
+        <div class="flex flex-wrap justify-start gap-5 ">
+            <div *ngFor="let item of getRange(6)">
+            <a routerLink='/reading' href="#">
+            <div class="hover:scale-120">
+                <div class="flex flex-col items-center w-36 md:w-40 lg:w-48 xl:w-56">
+                    <img src="imagetoon\Chronicles-of-the-Demon-Faction.jpg" alt=""
+                        class="w-full object-scale-down rounded-lg ">
+                    <p class="text-center mt-2 font-semibold">ตอนที่ {{item+1}}</p>
                 </div>
             </div>
         </a>
+    </div>  
+        </div>
     </div>
 </div>

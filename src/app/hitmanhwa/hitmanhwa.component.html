@@ -8,64 +8,22 @@
                 </div>
                 <div class="navbar-center hidden lg:flex">
                     <ul class="menu menu-horizontal">
-                        <li><a href="#" class="text-xl mr-20 font-bold" [class.border-b-4]="activeMenu === 'ใหม่'" (click)="setActiveMenu('ใหม่')">ใหม่</a></li>
-                        <li><a href="#" class="text-xl mr-20 font-bold"  [class.border-b-4]="activeMenu === 'จันทร์'" (click)="setActiveMenu('จันทร์')">จันทร์</a></li>
-                        <li><a href="#" class="text-xl mr-20 font-bold"  [class.border-b-4]="activeMenu === 'อังคาร'" (click)="setActiveMenu('อังคาร')">อังคาร</a></li>
-                        <li><a href="#" class="text-xl mr-20 font-bold"  [class.border-b-4]="activeMenu === 'พุธ'" (click)="setActiveMenu('พุธ')">พุธ</a></li>
-                        <li><a href="#" class="text-xl mr-20 font-bold"  [class.border-b-4]="activeMenu === 'พฤหัส'" (click)="setActiveMenu('พฤหัส')">พฤหัส</a></li>
-                        <li><a href="#" class="text-xl mr-20 font-bold"  [class.border-b-4]="activeMenu === 'ศุกร์'" (click)="setActiveMenu('ศุกร์')">ศุกร์</a></li>
-                        <li><a href="#" class="text-xl mr-20 font-bold"  [class.border-b-4]="activeMenu === 'เสาร์'" (click)="setActiveMenu('เสาร์')">เสาร์</a></li>
-                        <li><a href="#" class="text-xl mr-20 font-bold"  [class.border-b-4]="activeMenu === 'อาทิตย์'" (click)="setActiveMenu('อาทิตย์')">อาทิตย์</a></li>
+                        <li><p  class="text-xl mr-20 font-bold" [class.border-b-4]="activeMenu === 'ใหม่'" (click)="setActiveMenu('ใหม่')">ใหม่</p></li>
+                        <li><p  class="text-xl mr-20 font-bold"  [class.border-b-4]="activeMenu === 'จันทร์'" (click)="setActiveMenu('จันทร์')">จันทร์</p></li>
+                        <li><p  class="text-xl mr-20 font-bold"  [class.border-b-4]="activeMenu === 'อังคาร'" (click)="setActiveMenu('อังคาร')">อังคาร</p></li>
+                        <li><p  class="text-xl mr-20 font-bold"  [class.border-b-4]="activeMenu === 'พุธ'" (click)="setActiveMenu('พุธ')">พุธ</p></li>
+                        <li><p  class="text-xl mr-20 font-bold"  [class.border-b-4]="activeMenu === 'พฤหัส'" (click)="setActiveMenu('พฤหัส')">พฤหัส</p></li>
+                        <li><p  class="text-xl mr-20 font-bold"  [class.border-b-4]="activeMenu === 'ศุกร์'" (click)="setActiveMenu('ศุกร์')">ศุกร์</p></li>
+                        <li><p  class="text-xl mr-20 font-bold"  [class.border-b-4]="activeMenu === 'เสาร์'" (click)="setActiveMenu('เสาร์')">เสาร์</p></li>
+                        <li><p  class="text-xl mr-20 font-bold"  [class.border-b-4]="activeMenu === 'อาทิตย์'" (click)="setActiveMenu('อาทิตย์')">อาทิตย์</p></li>
                     </ul>
                 </div>
                 <div class="navbar-end"></div>
             </div>
         </div>
-
         <div class="container mx-auto pt-20 font-Kanit">
-            <label class="col-span-3 text-2xl ml-15">เรื่องใหม่ยอดฮิต</label>
-
-            <div class="grid gap-4 grid-cols-5 mt-10">
-                <div class="col-span-2">
-                    <div class="relative justify-center justify-items-center">
-                        <a href="#">
-                            <div class="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
-                                <img src="imagetoon/The-World-After-the-end.jpg" class="max-w-xs transition duration-300 ease-in-out hover:scale-110" alt="">
-                            </div>
-                        </a>
-                        <div class="detail mt-10 w-120">
-                            <p class="text-xl font-bold text-gray-500">แอ็กชั่น</p>
-                            <h1 class="text-2xl font-bold">The World After the End</h1>
-                            <div class="shortstory mt-5">
-                                <label class="font-bold">เรื่องย่อ</label>
-                                <p class="mt-5 text-sm/7">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, facere perferendis! Placeat, aut omnis ab assumenda quo corporis, voluptatibus excepturi tempore quae eum unde iusto eius minima animi dolor. Est!
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-span-3">
-                    <div class="text-center shadow-sm flex-grow" *ngFor="let item of alldata">
-                        <a routerLink="/detail" href="#" class="hover:opacity-70 transition delay-150 duration-300 ease-in-out">
-                            <div class="grid grid-cols-3 gap-4">
-                                <div class="col-span-1 flex justify-center p-5">
-                                    <img [src]="item.photo" class="h-50 w-37" alt="">
-                                </div>
-
-                                <div class="col-span-2 relative flex items-center justify-center">
-                                    <div class="text-center">
-                                        <p class="font-bold mb-3 text-gray-500">แนว: {{ item.style }}</p>
-                                        <h1 class="font-bold text-2xl mb-3">{{ item.name }}</h1>
-                                        <p class="font-bold text-gray-500">สถานะ: {{ item.status }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
+            <label *ngIf="activeMenu === 'ใหม่'" class="col-span-3 text-2xl ml-15">เรื่องใหม่ยอดฮิต</label>
+            <label *ngIf="activeMenu !== 'ใหม่'" class="col-span-3 text-2xl ml-15">อัพเดทวัน{{activeMenu}}</label>
+            <app-list-hitmanhwa [activeMenu]="activeMenu"/>
         </div>
     </div> 

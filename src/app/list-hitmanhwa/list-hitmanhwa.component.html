@@ -1,0 +1,92 @@
+
+
+
+    <div *ngIf="activeMenu === 'ใหม่'" class="grid gap-4 grid-cols-5 mt-10">
+        <div class="col-span-2">
+            <div class="relative justify-center justify-items-center">
+                <a href="#">
+                    <div class="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
+                        <img src="imagetoon/The-World-After-the-end.jpg" class="max-w-xs transition duration-300 ease-in-out hover:scale-110" alt="">
+                    </div>
+                </a>
+                <div class="detail mt-10 w-120">
+                    <p class="text-xl font-bold text-gray-500">แอ็กชั่น</p>
+                    <h1 class="text-2xl font-bold">The World After the End</h1>
+                    <div class="shortstory mt-5">
+                        <label class="font-bold">เรื่องย่อ</label>
+                        <p class="mt-5 text-sm/7">
+                            The World After the end โลกหลังการล่มสลาย มังงะซุปเปอร์แปลไทย
+                            จู่ๆ มนุษย์ก็ถูกอัญเชิญให้กลายเป็น “วอล์กเกอร์” และพวกเขาจำเป็นต้องเคลียร์หอคอยเพื่อช่วยโลก . . ชั้น 77: ค้นพบ “หินแห่งการถดถอย” วอล์กเกอร์สามารถ “ย้อน” ไปสู่อดีตได้แล้ว ทุกคนจากไปอย่างช้าๆ . . ความหวังสุดท้ายของมนุษยชาติ “คาร์เปเดียม” ก่อตัวขึ้น ซึ่งประกอบด้วยผู้คนที่ไม่ยอมละทิ้งโลก วอล์คเกอร์คนสุดท้ายมาถึงชั้น 100 เขาไม่รู้ว่าจะเชื่ออะไรอีกต่อไป
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-span-3">
+            <div class="text-center shadow-sm flex-grow" *ngFor="let item of alldata;let i = index">
+                <div *ngIf="i<4">
+                <a routerLink="/detail" href="#" class="hover:opacity-70 transition delay-150 duration-300 ease-in-out">
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="col-span-1 flex justify-center p-5">
+                            <img [src]="item.photo" class="h-50 w-37 rounded-lg" alt="">
+                        </div>
+
+                        <div class="col-span-2 relative flex items-center justify-center">
+                            <div class="text-center">
+                                <p class="font-bold mb-3 text-gray-500">แนว: {{ item.style }}</p>
+                                <h1 class="font-bold text-2xl mb-3">{{ item.name }}</h1>
+                                <p class="font-bold text-gray-500">สถานะ: {{ item.status }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+    <div *ngIf="activeMenu !== 'ใหม่'" class="grid gap-4 grid-cols-5 mt-10">
+        <div class="col-span-2">
+            <div class="relative justify-center justify-items-center">
+                <a href="#">
+                    <div class="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
+                        <img src="imagetoon/Chronicles-Of-The-Martial-Gods-Return.jpg" class="max-w-xs transition duration-300 ease-in-out hover:scale-110" alt="">
+                    </div>
+                </a>
+                <div class="detail mt-10 w-120">
+                    <p class="text-xl font-bold text-gray-500">แอ็กชั่น</p>
+                    <h1 class="text-2xl font-bold">Chronicles Of The Martial Gods Return</h1>
+                    <div class="shortstory mt-5">
+                        <label class="font-bold">เรื่องย่อ</label>
+                        <p class="mt-5 text-sm/7">
+                            Chronicles Of The Martial God’s Return ตำนานเทพยุทธ์หวนปฐพี มังงะซุปเปอร์แปลไทย
+แดน อูฮยอน เทพแห่งการต่อสู้ขั้นสูงสุด ถูกผนึกไว้เพราะเขาแข็งแกร่งเกินกว่าที่โลกจะรับมือไหว หลังจากหนึ่งพันปีผ่านไป เขาถูกปลดจากผนึกและรู้สึกเหมือนทุกอย่างไร้ความหมายขณะที่เขาเดินไปตามตรอกซอกซอยด้านหลัง ขณะที่เขาล้มลงเพราะเบื่อโลก มือเล็กๆ ก็ปรากฏขึ้นตรงหน้าเขา  นี่คืออะไร แดน อูฮยอน ถาม เกี๊ยว มาตอบกลับ นี่เป็นครั้งแรกในชีวิตที่มีคนทำดีกับเขาโดยไม่มีเจตนาร้าย และนั่นทำให้โชคชะตาของเขาเปลี่ยนไป
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-span-3">
+            <div class="text-center shadow-sm flex-grow" *ngFor="let item of alldata; let i = index">
+                <div *ngIf="i > 4">
+                <a routerLink="/detail" href="#" class="hover:opacity-70 transition delay-150 duration-300 ease-in-out">
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="col-span-1 flex justify-center p-5">
+                            <img [src]="item.photo" class="h-50 w-37 rounded-lg" alt="">
+                        </div>
+
+                        <div class="col-span-2 relative flex items-center justify-center">
+                            <div class="text-center">
+                                <p class="font-bold mb-3 text-gray-500">แนว: {{ item.style }}</p>
+                                <h1 class="font-bold text-2xl mb-3">{{ item.name }}</h1>
+                                <p class="font-bold text-gray-500">สถานะ: {{ item.status }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>

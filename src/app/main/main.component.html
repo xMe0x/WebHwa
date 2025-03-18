@@ -1,4 +1,14 @@
-<div class="carousel w-full relative">
+<div class="mt-5">
+<p-carousel [value]="images" [numVisible]="1" [numScroll]="1" 
+            [circular]="true" autoplayInterval="3000">
+  <ng-template let-product pTemplate="item">
+    <div class="image-item flex justify-center items-center h-120  ">
+      <img [src]="product.image" class="flex justify-center object-cover rounded-lg" alt="Image" />
+    </div>
+  </ng-template>
+</p-carousel>
+</div>
+<!-- <div class="carousel w-full relative">
 
   <div id="slide1" class="carousel-item relative w-full">
     <img src="imagetoon/sliderimage.jpg" class="w-full h-[350px] object-cover">
@@ -28,76 +38,27 @@
       <a href="#slide1" class="btn btn-circle bg-black/40 text-white hover:bg-black">❯</a>
     </div>
   </div>
-</div>
+</div> -->
 
 
 
 <div class="container mx-auto px-5 mt-10">
   <div class="flex justify-between items-center mb-4">
     <h2 class="text-xl md:text-2xl font-bold">อัพล่าสุด</h2>
-    <a href="#" class="text-gray-600 hover:text-black flex items-center text-sm md:text-base font-medium">
+    <a routerLink="/hitmanhwa" href="#" class="text-gray-600 hover:text-black flex items-center text-sm md:text-base font-medium">
       เพิ่มเติม <span class="ml-1">❯</span>
     </a>
   </div>
     <div class="grid grid-cols-4 gap-30"> <!-- อัพล่าสุด -->
-
-
-      <div class="relative group cursor-pointer">
+      <div *ngFor="let item of alldata let i = index">
+        <div routerLink="/detail" class="relative group cursor-pointer max-w-xs overflow-hidden bg-cover bg-no-repeat">
         <div class="w-full aspect-[2/3] overflow-hidden rounded-lg shadow-md">
-          <img src="imagetoon/Chronicles-of-the-Demon-Faction.jpg" class="w-full h-full object-cover">
-        </div>
-        <div class="absolute top-1 left-1 sm:top-2 sm:left-2 bg-red-500 text-white text-[10px] sm:text-xs px-1 sm:px-2 py-0.5 sm:py-1 rounded-full">ใหม่</div>
-      </div>
-
-
-      <div class="relative group cursor-pointer">
-        <div class="w-full aspect-[2/3] overflow-hidden rounded-lg shadow-md">
-          <img src="imagetoon/I-Raised-the-Villains-Preciously.jpg" class="w-full h-full object-cover">
-        </div>
-        <div class="absolute top-1 left-1 sm:top-2 sm:left-2 bg-green-500 text-white text-[10px] sm:text-xs px-1 sm:px-2 py-0.5 sm:py-1 rounded-full">อัปเดต</div>
-      </div>
-
-
-      <div class="relative group cursor-pointer">
-        <div class="w-full aspect-[2/3] overflow-hidden rounded-lg shadow-md">
-          <img src="imagetoon/Juvenile-Offender.jpg" class="w-full h-full object-cover">
+          <div *ngIf="i <= 3" class="absolute top-1 left-1 sm:top-2 sm:left-2 bg-red-500 text-white text-[10px] sm:text-xs px-1 sm:px-2 py-0.5 sm:py-1 rounded-full">ใหม่</div>
+          <div *ngIf="i > 3" class="absolute top-1 left-1 sm:top-2 sm:left-2 bg-green-500 text-white text-[10px] sm:text-xs px-1 sm:px-2 py-0.5 sm:py-1 rounded-full">อัปเดต</div>
+          <img   [src]="item.photo" class="w-full h-full object-cover max-w-xs transition duration-300 ease-in-out hover:scale-110"/>
         </div>
       </div>
-
-
-      <div class="relative group cursor-pointer">
-        <div class="w-full aspect-[2/3] overflow-hidden rounded-lg shadow-md">
-          <img src="imagetoon/Solo-Max-Level-Newbie.jpg" class="w-full h-full object-cover">
-        </div>
-      </div>
-
-
-      <div class="relative group cursor-pointer">
-        <div class="w-full aspect-[2/3] overflow-hidden rounded-lg shadow-md">
-          <img src="imagetoon/Spy-X-Family.png" class="w-full h-full object-cover">
-        </div>
-      </div>
-
-
-      <div class="relative group cursor-pointer">
-        <div class="w-full aspect-[2/3] overflow-hidden rounded-lg shadow-md">
-          <img src="imagetoon/The-Extras-Academy-Survival-Guide.jpg" class="w-full h-full object-cover">
-        </div>
-      </div>
-
-
-      <div class="relative group cursor-pointer">
-        <div class="w-full aspect-[2/3] overflow-hidden rounded-lg shadow-md">
-          <img src="imagetoon/The-Poison-Master-of-Sacheon-Tang-Clan.jpg" class="w-full h-full object-cover">
-        </div>
-      </div>
-
-
-      <div class="relative group cursor-pointer">
-        <div class="w-full aspect-[2/3] overflow-hidden rounded-lg shadow-md">
-          <img src="imagetoon/The-World-After-the-end.jpg" class="w-full h-full object-cover">
-        </div>
-      </div>
+    </div>
 
     </div>
   </div>
@@ -106,7 +67,7 @@
   <div class="container mx-auto px-5 mt-10">
     <div class="flex justify-between items-center mb-4">
       <h2 class="text-xl md:text-2xl font-bold">หมวดหมู่ยอดนิยม</h2>
-      <a href="#" class="text-gray-600 hover:text-black flex items-center text-sm md:text-base font-medium">
+      <a routerLink="/catagory" href="#" class="text-gray-600 hover:text-black flex items-center text-sm md:text-base font-medium">
         เพิ่มเติม <span class="ml-1">❯</span>
       </a>
     </div>
@@ -125,17 +86,19 @@
         </div>
 
 
-        <div class="relative group cursor-pointer">
+        <div class="group relative  cursor-pointer backdrop-opacity-80">
           <div class="w-full aspect-[2/3] overflow-hidden rounded-lg shadow-md">
             <img src="imagetoon/gintama.jpg" class="w-full h-full object-cover">
+            <div class=" flex flex-col absolute inset-0  justify-end bg-black/50 p-4 test-hover">
+              <h3 class="text-white text-lg font-bold">คอมเมดี้</h3>
+              <p class="text-gray-300 text-sm">ตลก/ชีวิตประจำวัน/ยุคปัจจุบัน</p>
+            </div>
           </div>
+          </div>
+       
 
           <!-- ข้อความอยู่บนรูป -->
-          <div class="absolute inset-0 flex flex-col justify-end bg-black/50 p-4">
-            <h3 class="text-white text-lg font-bold">คอมเมดี้</h3>
-            <p class="text-gray-300 text-sm">ตลก/ชีวิตประจำวัน/ยุคปัจจุบัน</p>
-          </div>
-        </div>
+        
 
         <div class="relative group cursor-pointer">
           <div class="w-full aspect-[2/3] overflow-hidden rounded-lg shadow-md">
@@ -156,7 +119,7 @@
         <div class="container mx-auto px-5 mt-10">
           <div class="flex justify-between items-center mb-4">
             <h2 class="text-xl md:text-2xl font-bold">เรื่องใหม่มาแรง</h2>
-            <a href="#" class="text-gray-600 hover:text-black flex items-center text-sm md:text-base font-medium">
+            <a routerLink="/hitmanhwa" href="#" class="text-gray-600 hover:text-black flex items-center text-sm md:text-base font-medium">
               เพิ่มเติม <span class="ml-1">❯</span>
             </a>
           </div>

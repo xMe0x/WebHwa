@@ -53,6 +53,22 @@ export  class dataservice {
         year:2023,
         photo:`imagetoon/The-Extras-Academy-Survival-Guide.jpg`
     }
+    ,
+    {
+        name:'The Dawn to Come',
+        style:'ดราม่า',
+        status:'ยังไม่จบ',
+        year:2024   ,
+        photo:`imagetoon/the-best-school-romance-manhwa-webtoons-you-must-read.jpg`
+    }
+    ,
+    {
+        name:'Your Talent is Mine 2',
+        style:'แอ็กชั่น',
+        status:'ยังไม่จบ',
+        year:2023,
+        photo:`imagetoon/Your-Talent-is-Mine-2.jpg`
+    }
 
 ];
 }
